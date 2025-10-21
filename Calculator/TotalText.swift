@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct TotalText: View {
+    var value = "0"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Text(value)
+            .frame(width: 320, alignment: .bottomTrailing)
+            .fontWeight(.light)
+            .font(.system(size: 80))
+            .padding()
+            .lineLimit(1)
     }
 }
 
