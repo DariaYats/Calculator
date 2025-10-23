@@ -83,13 +83,27 @@ struct ButtonGrid: View {
             return
         }
 
+        if currentMode == .addition {
+            savedInt += currentInt
+        } else if currentMode == .subtraction {
+            savedInt -= currentInt
+        } else if currentMode == .multiplication {
+            savedInt *= currentInt
+        }
+
+        currentInt = savedInt
+        updateText()
+        lastButtonWasMode = true
+
     }
 
     func updateText() {
         if currentMode == .notSet {
             savedInt = currentInt
         }
-        total = "\(currentInt)"
+        let formatter = NumberFormatter()
+        formatter.numberStyle = .decimal
+        total = formatter.string(for: currentInt) ?? "Error"
     }
 }
 
