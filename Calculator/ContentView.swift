@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ContentView: View {
-@State var total = "1"
+@State var total = "0"
     var body: some View {
         VStack {
             TotalText(value: total)
