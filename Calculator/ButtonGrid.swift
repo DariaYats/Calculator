@@ -75,10 +75,14 @@ struct ButtonGrid: View {
     }
 
     func clearWasPressed(button: CalculatorButton) {
-        lastButtonWasMode = true
+        total = "0"
+        currentMode = .notSet
+        lastButtonWasMode = false
+        currentInt = 0
+        savedInt = 0
     }
 
-    func equalWasPressed(button: CalculatorButton) {
+    func equalWasPressed(button: CalculatorImageButton) {
         if currentMode == .notSet ||  lastButtonWasMode {
             return
         }
