@@ -27,28 +27,28 @@ struct ButtonGrid: View {
                 CalculatorButton(buttonText: "1", action: numberWasPressed)
                 CalculatorButton(buttonText: "2", action: numberWasPressed)
                 CalculatorButton(buttonText: "3", action: numberWasPressed)
-                CalculatorButton(buttonText: "+", color: .orange, action: modeWasPressed, mode: .addition)
+                CalculatorImageButton(buttonText: "plus", color: .orange, action: modeWasPressed, mode: .addition)
             }
 
             GridRow {
                 CalculatorButton(buttonText: "4", action: numberWasPressed)
                 CalculatorButton(buttonText: "5", action: numberWasPressed)
                 CalculatorButton(buttonText: "6", action: numberWasPressed)
-                CalculatorButton(buttonText: "-", color: .orange, action: modeWasPressed, mode: .subtraction)
+                CalculatorImageButton(buttonText: "minus", color: .orange, action: modeWasPressed, mode: .subtraction)
             }
 
             GridRow {
                 CalculatorButton(buttonText: "7", action: numberWasPressed)
                 CalculatorButton(buttonText: "8", action: numberWasPressed)
                 CalculatorButton(buttonText: "9", action: numberWasPressed)
-                CalculatorButton(buttonText: "x", color: .orange, action: modeWasPressed, mode: .multiplication)
+                CalculatorImageButton(buttonText: "multiply", color: .orange, action: modeWasPressed, mode: .multiplication)
             }
 
             GridRow {
                 CalculatorButton(buttonText: "0", width: 147, action: numberWasPressed)
                     .gridCellColumns(2)
-                CalculatorButton(buttonText: "C", color: .gray, action: clearWasPressed(button:))
-                CalculatorButton(buttonText: "=", color: .orange, action: equalWasPressed)
+                CalculatorButton(buttonText: "C", color: .gray, action: clearWasPressed)
+                CalculatorImageButton(buttonText: "equal", color: .orange, action: equalWasPressed)
             }
         }
     }
@@ -68,7 +68,7 @@ struct ButtonGrid: View {
         }
     }
 
-    func modeWasPressed(button: CalculatorButton) {
+    func modeWasPressed(button: CalculatorImageButton) {
         lastButtonWasMode = true
         currentMode = button.mode
 
